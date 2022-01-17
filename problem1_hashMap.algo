@@ -1,0 +1,30 @@
+ALGORITHM problem1_hashMap
+VAR
+    arr1 : ARRAY_OF INTEGER[4]:=[3,1,7,9];
+    arr2 : ARRAY_OF INTEGER[4]:=[2,4,3,9];
+    c: HASH_TABLE<INTEGER,INTEGER>
+    sum:INTEGER:=0
+BEGIN
+    FOR i FROM 0 TO arr1.length STEP 1  DO
+        c.insert(arr1[i],1)
+    END_FOR
+    FOR i FROM 0 TO arr2.length STEP 1  DO
+        IF (C.lookup(arr2[i]) = true) THEN
+            C.insert(arr2[i],2)
+            
+        ELSE
+            C.insert(arr2[i],1)
+        END_IF
+    END_FOR
+    FOR i FROM 1 TO arr1.length STEP 1  DO
+        IF (C.get(arr1[i]) = 1) THEN
+            Sum = Sum + arr1[i]
+        END_IF
+    END_FOR
+    FOR i FROM 1 TO arr2.length STEP 1  DO
+        IF (C.get(arr2[i]) = 1) THEN
+            Sum = Sum + arr2[i]
+        END_IF
+    END_FOR
+    Write(sum)
+END

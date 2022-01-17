@@ -1,0 +1,18 @@
+ALGORITHM problem2_hashMap
+VAR
+    arr1 : ARRAY_OF INTEGER[4]:=[12,13,6,10];
+    arr2 : ARRAY_OF INTEGER[4]:=[13,10,16,15];
+    c:HASH_TABLE<INTEGER,INTEGER>
+    sum:INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO arr1.length STEP 1  DO
+        c.insert(arr1[i],1)
+    END_FOR
+    FOR i FROM 0 TO arr2.length STEP 1  DO
+        IF (c.lookup(arr2[i]=true)) THEN
+            c.insert(arr2[i],2)
+            sum:=sum+arr2[i]*2
+        END_IF
+    END_FOR
+    Write(sum)
+END

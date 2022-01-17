@@ -1,0 +1,41 @@
+ALGORITHM problem1_array
+VAR
+    set1 : ARRAY_OF INTEGER[4];
+    set2 : ARRAY_OF INTEGER[5];
+    i:INTEGER
+    j:INTEGER
+    sum:INTEGER;
+    bool:BOOLEAN;
+BEGIN
+    set1:={3,1,7,9}
+    set2:={2,4,1,9,3}
+    sum:=0;
+    FOR i FROM 0 TO set1.length STEP 1  DO
+        bool:= false
+        FOR j FROM 0 TO set2.length STEP 1  DO
+            WHILE (set1[i]=set2[j]) DO
+                bool:=true
+                break
+            END_WHILE () 
+        END_FOR
+        IF (bool=false) THEN
+            sum := sum + set1[i]
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO set2.length STEP 1  DO
+        bool:= false
+        FOR j FROM 0 TO set1.length STEP 1  DO
+            WHILE (set2[i]=set1[j]) DO
+                bool:=true
+                break
+            END_WHILE () 
+        END_FOR
+        IF (bool=false) THEN
+            sum := sum + set2[i]
+        END_IF
+    END_FOR
+
+    Write(sum)
+
+
+END
