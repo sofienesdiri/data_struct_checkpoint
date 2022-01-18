@@ -13,10 +13,10 @@ BEGIN
     FOR i FROM 0 TO set1.length STEP 1  DO
         bool:= false
         FOR j FROM 0 TO set2.length STEP 1  DO
-            WHILE (set1[i]=set2[j]) DO
+            IF (set1[i]=set2[j]) DO
                 bool:=true
                 break
-            END_WHILE () 
+            END_IF 
         END_FOR
         IF (bool=false) THEN
             sum := sum + set1[i]
@@ -25,10 +25,10 @@ BEGIN
     FOR i FROM 0 TO set2.length STEP 1  DO
         bool:= false
         FOR j FROM 0 TO set1.length STEP 1  DO
-            WHILE (set2[i]=set1[j]) DO
+            IF (set2[i]=set1[j]) DO
                 bool:=true
                 break
-            END_WHILE () 
+            END_IF  
         END_FOR
         IF (bool=false) THEN
             sum := sum + set2[i]
